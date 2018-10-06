@@ -1,7 +1,6 @@
 <style>
     body {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: black;
+        font-family: Lobster;
     }
 
     .yay {
@@ -9,21 +8,22 @@
         animation: rainbow 10s infinite;
     }
 
+    .links {
+        font-size: 50px;
+
+    }
+
     h1 {
-        font-size: 100px;
+        font-size: 60px;
     }
 
     #post_text {
-        font-size: 80px;
+        font-size: 40px;
     }
 
     .posts {
         background-color: white;
         color: orange;
-    }
-
-    hr {
-        color: black;
     }
 
     @keyframes rainbow {
@@ -61,13 +61,15 @@
 
 <head>
     <title>Coding Blog!</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Jua|Lobster" rel="stylesheet">
 </head>
 
 <body>
+
     <h1 class="yay">Coding Blog!</h1>
-    <h2 id="post_text" class="yay"><u>Posts:</u></h2>
+    <h2 id="post_text" class="yay"><u>Posts</u></h2>
 
     <hr>
 
@@ -76,9 +78,19 @@
         <p></p>
         <h2>{{ post.published_date }}</h2>
         <h2>{{ post.title }}</h2>
-        <h3>{{ post.text}}</h3>
+        <h3>{{ post.text|linebreaksbr }}</h3>
     </div>
     {% endfor %}
+
+    <hr>
+
+    <h2 id="post_text" class="yay"><u>Links</u></h2>
+
+    <div class="links">
+        <a href="https://github.com/conniepocky">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
 </body>
 
 </html>
