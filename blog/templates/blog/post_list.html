@@ -9,6 +9,23 @@
         animation: rainbow 10s infinite;
     }
 
+    h1 {
+        font-size: 100px;
+    }
+
+    #post_text {
+        font-size: 80px;
+    }
+
+    .posts {
+        background-color: white;
+        color: orange;
+    }
+
+    hr {
+        color: black;
+    }
+
     @keyframes rainbow {
         0% {
             color: orange;
@@ -27,7 +44,7 @@
         }
 
         60% {
-            color: green;
+            color: lime;
         }
 
         100% {
@@ -44,12 +61,24 @@
 
 <head>
     <title>Coding Blog!</title>
-
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
 
 <body>
     <h1 class="yay">Coding Blog!</h1>
-    <h2 class="yay"><u>Posts:</u></h2>
+    <h2 id="post_text" class="yay"><u>Posts:</u></h2>
+
+    <hr>
+
+    {% for post in posts %}
+    <div class="posts yay">
+        <p></p>
+        <h2>{{ post.published_date }}</h2>
+        <h2>{{ post.title }}</h2>
+        <h3>{{ post.text}}</h3>
+    </div>
+    {% endfor %}
 </body>
 
 </html>
